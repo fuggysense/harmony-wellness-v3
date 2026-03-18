@@ -1,0 +1,79 @@
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 07-philosophy — Three Pillars with stagger animation
+-->
+
+<style>
+  .philosophy-07-pillar {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .philosophy-07-pillar.animate-in {
+    opacity: 1;
+    transform: translate(0, 0) !important;
+  }
+  @media (max-width: 768px) {
+    .philosophy-07-pillars { gap: 40px !important; flex-direction: column !important; }
+    .philosophy-07-char { font-size: 56px !important; }
+    .philosophy-07-heading { font-size: 40px !important; }
+  }
+</style>
+
+<!-- EDIT: Philosophy section -->
+<section id="philosophy" style="background-color: #FAF7F2; padding: 100px 24px 40px;">
+  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 48px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">Our Approach</span>
+      <h2 class="philosophy-07-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">The Three Pillars</h2>
+    </div>
+    <div class="philosophy-07-pillars" style="display: flex; align-items: flex-start; gap: 80px; justify-content: center;">
+      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateX(-40px);">
+        <!-- EDIT: Pillar 1 character -->
+        <span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">排</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Release</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Clear toxins and stagnation</span>
+      </div>
+      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateY(40px);">
+        <!-- EDIT: Pillar 2 character -->
+        <span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">通</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Restore</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Unblock meridians and circulation</span>
+      </div>
+      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateX(40px);">
+        <!-- EDIT: Pillar 3 character -->
+        <span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">补</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Replenish</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Strengthen qi and vitality</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pillar stagger animation JS -->
+<script>
+  (function() {
+    var pillars = document.querySelectorAll('.philosophy-07-pillar');
+    if (!pillars.length) return;
+    var pillarObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var items = entry.target.querySelectorAll('.philosophy-07-pillar');
+          items.forEach(function(item, i) {
+            setTimeout(function() {
+              item.classList.add('animate-in');
+            }, i * 250);
+          });
+          pillarObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    var pillarContainer = pillars[0].parentElement;
+    pillarObserver.observe(pillarContainer);
+  })();
+</script>

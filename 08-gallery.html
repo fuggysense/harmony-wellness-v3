@@ -1,0 +1,47 @@
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 08-gallery — Horizontal scrolling photo gallery
+-->
+
+<style>
+  .gallery-08-track::-webkit-scrollbar { display: none; }
+  .gallery-08-track { -ms-overflow-style: none; scrollbar-width: none; }
+  @media (max-width: 768px) {
+    .gallery-08-img { min-width: 280px !important; height: 240px !important; }
+  }
+</style>
+
+<!-- EDIT: Gallery section -->
+<section style="background-color: #FAF7F2; padding: 40px 0 100px;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; margin-bottom: 32px; text-align: center;">
+    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">Our Space</span>
+  </div>
+  <div class="gallery-08-track" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(24px, calc((100vw - 1200px) / 2));">
+    <!-- EDIT: Gallery photo 1 — replace with treatment room interior -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Treatment+Room" alt="EDIT: Treatment room interior (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 2 — replace with herbal medicine shelf -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Herbal+Medicine" alt="EDIT: Chinese herbal medicine shelf (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 3 — replace with hands-on treatment -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Hands-On+Treatment" alt="EDIT: Therapist performing treatment (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 4 — replace with clinic interior -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Clinic+Interior" alt="EDIT: Clinic corridor or reception (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 5 — replace with equipment -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Equipment+%26+Tools" alt="EDIT: Treatment equipment and tools (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>

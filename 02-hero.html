@@ -1,0 +1,57 @@
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 02-hero — Full-viewport hero with parallax background
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .hero-02-section { min-height: 520px !important; }
+    .hero-02-welcome { font-size: 18px !important; }
+    .hero-02-heading { font-size: 42px !important; }
+    .hero-02-sub { font-size: 16px !important; }
+  }
+</style>
+
+<!-- EDIT: Hero section -->
+<section class="hero-02-section" style="min-height: 720px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+  <!-- EDIT: Hero background video — replace src with your video URL -->
+  <video autoplay muted loop playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;" poster="https://placehold.co/1440x720/3d2e24/C4956A?text=Treatment+Room+Photo">
+    <source src="" type="video/mp4">
+  </video>
+  <!-- EDIT: Hero background image fallback — replace URL with your photo -->
+  <div class="hero-02-parallax" style="position: absolute; inset: 0; background-image: url('https://placehold.co/1440x720/3d2e24/C4956A?text=Treatment+Room+Photo'); background-size: cover; background-position: center; z-index: 0;"></div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,27,24,0.15) 0%, rgba(30,27,24,0.45) 60%, rgba(250,247,242,1) 100%); z-index: 1;"></div>
+  <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 0 24px; margin-top: -60px;">
+    <!-- EDIT: Welcome line -->
+    <p class="hero-02-welcome" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 24px; font-weight: 400; color: rgba(250,247,242,0.85); font-style: italic; margin: 0;">Welcome to 元泰堂</p>
+    <!-- EDIT: Hero headline -->
+    <h1 class="hero-02-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 76px; font-weight: 400; color: #FAF7F2; line-height: 1.06; letter-spacing: -0.02em; margin: 0;">Release, Restore &amp; Replenish</h1>
+    <!-- EDIT: Hero subheadline -->
+    <p class="hero-02-sub" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; font-weight: 400; color: rgba(250,247,242,0.7); font-style: italic; margin: 0;">In 500 years of healing tradition</p>
+    <a href="#treatments" style="display: inline-flex; align-items: center; justify-content: center; padding: 18px 56px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.4); border-radius: 4px; text-decoration: none; margin-top: 28px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.16em; text-transform: uppercase;">Explore Treatments</span>
+    </a>
+  </div>
+  <div style="position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 2;">
+    <a href="#about" style="text-decoration: none;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(44,36,32,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+  </div>
+</section>
+
+<!-- Parallax JS -->
+<script>
+  (function() {
+    var heroBg = document.querySelector('.hero-02-parallax');
+    if (heroBg) {
+      window.addEventListener('scroll', function() {
+        var scrolled = window.pageYOffset;
+        heroBg.style.transform = 'translateY(' + (scrolled * 0.35) + 'px)';
+      }, { passive: true });
+    }
+  })();
+</script>

@@ -1,0 +1,59 @@
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 10-trial — Dramatic dark trial offer
+  NOTE: Includes gradient transition from gallery above
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .trial-09-price { font-size: 64px !important; }
+    .trial-09-heading { font-size: 32px !important; }
+    .trial-09-includes { flex-direction: column !important; align-items: flex-start !important; }
+  }
+</style>
+
+<!-- Gallery-to-Trial gradient transition -->
+<div style="height: 100px; background: linear-gradient(to bottom, #FAF7F2, #2C2420);"></div>
+
+<!-- EDIT: Trial offer section -->
+<section style="position: relative; overflow: hidden; padding: 140px 24px;">
+  <!-- EDIT: Trial section background photo — replace with treatment room image -->
+  <img src="https://placehold.co/1440x800/2C2420/C4956A?text=Treatment+Room+Ambiance" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+  <div style="position: absolute; inset: 0; background: rgba(44,36,32,0.88); z-index: 1;"></div>
+  <div style="position: relative; z-index: 2; max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
+    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">First-Time Visitors</span>
+    <!-- EDIT: Trial price -->
+    <span class="trial-09-price" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 100px; color: #C4956A; letter-spacing: -0.03em; line-height: 1;">$89</span>
+    <span style="font-family: 'Figtree', sans-serif; font-size: 16px; color: #8A7E74;"><span style="text-decoration: line-through;">$224</span> usual price</span>
+    <div style="width: 28px; height: 1px; background-color: #C4956A; margin: 4px 0;"></div>
+    <!-- EDIT: Trial treatment name -->
+    <h3 class="trial-09-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; font-weight: 400; color: #FAF7F2; margin: 0; line-height: 1.2;">Himalaya Massage +<br>Moxibustion Combo</h3>
+    <p style="font-family: 'Noto Serif SC', serif; font-size: 15px; color: rgba(196,149,106,0.7); margin: 0;">喜马拉雅按摩 + 艾灸 · 含全身状况评估</p>
+    <!-- What's included -->
+    <div class="trial-09-includes" style="display: flex; gap: 32px; margin: 16px 0 8px; justify-content: center; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #C4956A; font-size: 16px;">&#10003;</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Himalaya salt massage (60 min)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #C4956A; font-size: 16px;">&#10003;</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Moxibustion treatment</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #C4956A; font-size: 16px;">&#10003;</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Full body assessment</span>
+      </div>
+    </div>
+    <p style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.5); margin: 0;">No hard sell. No packages. Insurance-claimable treatments available.</p>
+    <!-- EDIT: Trial CTA link -->
+    <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20the%20%2489%20trial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 20px 56px; background-color: #C4956A; border-radius: 4px; text-decoration: none; margin-top: 8px; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 4px 24px rgba(196,149,106,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 600; color: #ffffff; letter-spacing: 0.1em; text-transform: uppercase;">Claim Your Trial — $89</span>
+    </a>
+  </div>
+</section>

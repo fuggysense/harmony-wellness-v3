@@ -1,0 +1,228 @@
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 05-treatments — Scroll-pinned treatment card reveal
+  NOTE: This section uses scroll-pinning JS. The outer section height (500vh) creates scroll distance.
+  On mobile (<768px), cards stack vertically with no scroll-pin behavior.
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .treatments-05-section { height: auto !important; }
+    .treatments-05-sticky { position: relative !important; height: auto !important; padding: 0 24px 60px !important; }
+    .treatments-05-deck { flex-direction: column !important; height: auto !important; gap: 16px !important; }
+    .treatments-05-card { width: 100% !important; height: 420px !important; }
+    .treatments-05-label { display: none !important; }
+    .treatments-05-detail { opacity: 1 !important; }
+    .treatments-05-heading { font-size: 40px !important; }
+  }
+</style>
+
+<!-- EDIT: Treatments section -->
+<section class="treatments-05-section" id="treatments" style="position: relative; height: 500vh; background-color: #FAF7F2;">
+  <div class="treatments-05-sticky" style="position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 24px;">
+    <!-- Section heading -->
+    <div style="text-align: center; margin-bottom: 32px;">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Signature Treatments</span>
+      <h2 class="treatments-05-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">Recommended for You</h2>
+      <p style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74; margin: 12px 0 0;">Scroll to explore each treatment</p>
+    </div>
+    <!-- Card deck -->
+    <div class="treatments-05-deck" style="max-width: 1200px; width: 100%; display: flex; gap: 6px; height: 60vh; overflow: hidden;">
+
+      <!-- Card 1: Tuina (starts expanded) -->
+      <div class="treatments-05-card" data-index="0" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <!-- EDIT: Tuina treatment photo -->
+        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Tuina+Massage" alt="EDIT: Replace with Tuina treatment photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">01 · Tuina</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <!-- EDIT: Treatment Chinese name -->
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">推拿按摩 · 镇店之宝</span>
+          <!-- EDIT: Treatment name -->
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Tuina Massage</h3>
+          <!-- EDIT: Treatment description -->
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Deep tissue technique targeting meridian blockages and muscle tension. Our signature treatment — the one locals keep coming back for.</p>
+          <!-- EDIT: Price -->
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Tuina" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Himalaya + Moxibustion (Trial) -->
+      <div class="treatments-05-card" data-index="1" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Himalaya+%2B+Moxibustion" alt="EDIT: Replace with Himalaya + Moxibustion photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <!-- Trial badge -->
+        <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); padding: 5px 14px; background-color: #C4956A; border-radius: 4px; z-index: 2; white-space: nowrap;">
+          <span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #fff; letter-spacing: 0.06em; text-transform: uppercase;">Trial $89</span>
+        </div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">02 · Trial</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">喜马拉雅按摩 + 艾灸</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Himalaya + Moxibustion</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Himalaya salt massage combined with traditional moxibustion. Includes a full body assessment. First-time visitors only.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$89</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5); text-decoration: line-through;">$224</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20the%20%2489%20trial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: #C4956A; border-radius: 4px; text-decoration: none; width: fit-content; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #fff; letter-spacing: 0.12em; text-transform: uppercase;">Claim Trial</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Acupuncture -->
+      <div class="treatments-05-card" data-index="2" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Acupuncture" alt="EDIT: Replace with acupuncture treatment photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">03 · Acupuncture</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">针灸 · 中医</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Acupuncture</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Precision needling along meridian points to restore energy flow and relieve chronic pain. MOH-registered practitioners.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ per area</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Acupuncture" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: Fasciotome -->
+      <div class="treatments-05-card" data-index="3" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Fasciotome" alt="EDIT: Replace with fasciotome therapy photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">04 · Fasciotome</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">筋膜刀 · 6个部位</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Fasciotome Therapy</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Advanced soft tissue instrument therapy. Targets six treatment areas to release fascial adhesions and improve mobility.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$128</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Fasciotome" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5: Physiotherapy -->
+      <div class="treatments-05-card" data-index="4" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Physiotherapy" alt="EDIT: Replace with physiotherapy session photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">05 · Physio</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">物理治疗 · 14种疗法</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Physiotherapy</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Evidence-based rehabilitation across 14 modalities. Combines modern techniques with TCM assessment for faster recovery.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $150</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20Physiotherapy%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6: TCM Beauty -->
+      <div class="treatments-05-card" data-index="5" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: calc(100% - 330px); transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=TCM+Facials" alt="EDIT: Replace with TCM facial/beauty photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">06 · Beauty</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 1; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">美容护理</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">TCM Facials &amp; Beauty</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">TCM-rooted facial treatments that work with your body's energy systems. Natural rejuvenation, not just surface-level care.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $88</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20Beauty%20treatment%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /deck -->
+  </div><!-- /sticky -->
+</section>
+
+<!-- Scroll-Pinned Card JS -->
+<script>
+  (function() {
+    if (window.innerWidth <= 768) return;
+
+    var section = document.querySelector('.treatments-05-section');
+    var cards = document.querySelectorAll('.treatments-05-card');
+    if (!section || !cards.length) return;
+
+    var N = cards.length;
+    var currentActive = 0;
+    var EXPANDED = 'calc(100% - 330px)';
+    var COLLAPSED = '60px';
+
+    function updateCards() {
+      var rect = section.getBoundingClientRect();
+      var sectionTop = -rect.top;
+      var scrollable = section.offsetHeight - window.innerHeight;
+
+      if (scrollable <= 0) return;
+
+      var progress = Math.max(0, Math.min(1, sectionTop / scrollable));
+      var activeIndex = Math.min(Math.floor(progress * N), N - 1);
+
+      if (activeIndex === currentActive) return;
+      currentActive = activeIndex;
+
+      cards.forEach(function(card, i) {
+        var label = card.querySelector('.treatments-05-label');
+        var detail = card.querySelector('.treatments-05-detail');
+        if (i === activeIndex) {
+          card.style.width = EXPANDED;
+          if (label) label.style.opacity = '0';
+          if (detail) detail.style.opacity = '1';
+        } else {
+          card.style.width = COLLAPSED;
+          if (label) label.style.opacity = '1';
+          if (detail) detail.style.opacity = '0';
+        }
+      });
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          updateCards();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
