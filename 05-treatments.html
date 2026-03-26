@@ -7,8 +7,9 @@
   Dark: #1E1B18
 
   SECTION: 05-treatments — Scroll-pinned treatment card reveal
-  NOTE: This section uses scroll-pinning JS. The outer section height (500vh) creates scroll distance.
+  NOTE: This section uses scroll-pinning JS. The outer section height scales with card count.
   On mobile (<768px), cards stack vertically with no scroll-pin behavior.
+  Video placeholders use IntersectionObserver — no video bytes load until near-viewport.
 -->
 
 <style>
@@ -21,36 +22,37 @@
     .treatments-05-detail { opacity: 1 !important; }
     .treatments-05-heading { font-size: 40px !important; }
   }
+  .treatment-video-wrapper { position: absolute; inset: 0; }
 </style>
 
 <!-- EDIT: Treatments section -->
-<section class="treatments-05-section" id="treatments" style="position: relative; height: 500vh; background-color: #FAF7F2;">
+<section class="treatments-05-section" id="treatments" style="position: relative; height: 1000vh; background-color: #FAF7F2;">
   <div class="treatments-05-sticky" style="position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 24px;">
     <!-- Section heading -->
     <div style="text-align: center; margin-bottom: 32px;">
       <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Signature Treatments</span>
-      <h2 class="treatments-05-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">Recommended for You</h2>
+      <h2 class="treatments-05-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">What We Offer</h2>
       <p style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74; margin: 12px 0 0;">Scroll to explore each treatment</p>
     </div>
     <!-- Card deck -->
     <div class="treatments-05-deck" style="max-width: 1200px; width: 100%; display: flex; gap: 6px; height: 60vh; overflow: hidden;">
 
       <!-- Card 1: Tuina (starts expanded) -->
-      <div class="treatments-05-card" data-index="0" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <!-- EDIT: Tuina treatment photo -->
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Tuina+Massage" alt="EDIT: Replace with Tuina treatment photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+      <div class="treatments-05-card" data-index="0" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: calc(100% - 690px); transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/tuina.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Tuina+Massage" alt="Tuina Massage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/tuina.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/tuina.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
           <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">01 · Tuina</span>
         </div>
-        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
-          <!-- EDIT: Treatment Chinese name -->
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 1; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">推拿按摩 · 镇店之宝</span>
-          <!-- EDIT: Treatment name -->
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Tuina Massage</h3>
-          <!-- EDIT: Treatment description -->
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Deep tissue technique targeting meridian blockages and muscle tension. Our signature treatment — the one locals keep coming back for.</p>
-          <!-- EDIT: Price -->
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Deep tissue massage along meridian lines. 60 minutes, full body.</p>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
             <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span>
             <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
@@ -63,7 +65,12 @@
 
       <!-- Card 2: Himalaya + Moxibustion (Trial) -->
       <div class="treatments-05-card" data-index="1" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Himalaya+%2B+Moxibustion" alt="EDIT: Replace with Himalaya + Moxibustion photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/himalaya-salt.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Himalaya+%2B+Moxibustion" alt="Himalaya Salt Massage + Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/himalaya-salt.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/himalaya-salt.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
         <!-- Trial badge -->
         <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); padding: 5px 14px; background-color: #C4956A; border-radius: 4px; z-index: 2; white-space: nowrap;">
@@ -88,7 +95,12 @@
 
       <!-- Card 3: Acupuncture -->
       <div class="treatments-05-card" data-index="2" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Acupuncture" alt="EDIT: Replace with acupuncture treatment photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/acupuncture.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Acupuncture" alt="Acupuncture" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/acupuncture.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/acupuncture.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
         <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
           <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">03 · Acupuncture</span>
@@ -96,7 +108,7 @@
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">针灸 · 中医</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Acupuncture</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Precision needling along meridian points to restore energy flow and relieve chronic pain. MOH-registered practitioners.</p>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">For back pain, migraines, and joint stiffness. MOH-registered practitioners.</p>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
             <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span>
             <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ per area</span>
@@ -109,7 +121,12 @@
 
       <!-- Card 4: Fasciotome -->
       <div class="treatments-05-card" data-index="3" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Fasciotome" alt="EDIT: Replace with fasciotome therapy photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/fasciotome.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Fasciotome" alt="Fasciotome Therapy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/fasciotome.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/fasciotome.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
         <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
           <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">04 · Fasciotome</span>
@@ -117,7 +134,7 @@
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">筋膜刀 · 6个部位</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Fasciotome Therapy</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Advanced soft tissue instrument therapy. Targets six treatment areas to release fascial adhesions and improve mobility.</p>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Instrument-assisted soft tissue release. Head, neck, back, lumbar, limbs, or plantar.</p>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
             <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$128</span>
             <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
@@ -130,7 +147,12 @@
 
       <!-- Card 5: Physiotherapy -->
       <div class="treatments-05-card" data-index="4" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Physiotherapy" alt="EDIT: Replace with physiotherapy session photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/physiotherapy.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Physiotherapy" alt="Physiotherapy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/physiotherapy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/physiotherapy.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
         <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
           <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">05 · Physio</span>
@@ -138,7 +160,7 @@
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">物理治疗 · 14种疗法</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Physiotherapy</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Evidence-based rehabilitation across 14 modalities. Combines modern techniques with TCM assessment for faster recovery.</p>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Post-surgery rehab, sports injuries, chronic pain, scoliosis. 14 treatment types.</p>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
             <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $150</span>
           </div>
@@ -149,20 +171,177 @@
       </div>
 
       <!-- Card 6: TCM Beauty -->
-      <div class="treatments-05-card" data-index="5" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: calc(100% - 330px); transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=TCM+Facials" alt="EDIT: Replace with TCM facial/beauty photo (600x800)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+      <div class="treatments-05-card" data-index="5" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/tcm-beauty.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=TCM+Facials" alt="TCM Facials and Beauty" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/tcm-beauty.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/tcm-beauty.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
           <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">06 · Beauty</span>
         </div>
-        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 1; transition: opacity 0.3s 0.1s;">
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">美容护理</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">TCM Facials &amp; Beauty</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">TCM-rooted facial treatments that work with your body's energy systems. Natural rejuvenation, not just surface-level care.</p>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Basic facials, meridian lifting, deep pore cleansing, lymphatic detox.</p>
           <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
             <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $88</span>
           </div>
           <a href="https://wa.me/6590897778?text=Hi%2C%20Beauty%20treatment%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 7: Herbal Sleep Head Therapy -->
+      <div class="treatments-05-card" data-index="6" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/herbal-head-therapy.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Herbal+Head+Therapy" alt="Herbal Sleep Head Therapy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/herbal-head-therapy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/herbal-head-therapy.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">07 · Head Therapy</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">安眠草本头疗</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Herbal Sleep Head Therapy</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">90-minute herbal scalp treatment. For insomnia and tension headaches.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$158</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 90 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Herbal%20Head%20Therapy" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 8: Ear Candling + Eye Moxa -->
+      <div class="treatments-05-card" data-index="7" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/ear-eye-moxa.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Ear+%2B+Eye+Moxa" alt="Ear Candling + Eye Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/ear-eye-moxa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/ear-eye-moxa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">08 · Ear + Eye</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">采耳 + 眼灸</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Ear Candling + Eye Moxa</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Ear cleaning with warm eye moxibustion. 60 minutes.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$68</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Ear%20Candling" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 9: Gourd Moxibustion -->
+      <div class="treatments-05-card" data-index="8" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/gourd-moxa.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Gourd+Moxibustion" alt="Gourd Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/gourd-moxa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/gourd-moxa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">09 · Gourd Moxa</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">葫芦灸 · 8穴位</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Gourd Moxibustion</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Full-body moxibustion across 8 acupoints using a traditional gourd.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$188</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Gourd%20Moxibustion" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 10: Handheld Meridian Moxibustion -->
+      <div class="treatments-05-card" data-index="9" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/handheld-moxa.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Handheld+Moxa" alt="Handheld Meridian Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/handheld-moxa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/handheld-moxa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">10 · Handheld Moxa</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">手持灸 · 经络巡灸</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Handheld Meridian Moxa</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Meridian patrol moxibustion. Practitioner follows your body's meridian lines by hand.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$168</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Handheld%20Moxibustion" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 11: Needle-free Hydrafacial -->
+      <div class="treatments-05-card" data-index="10" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/hydrafacial.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Hydrafacial" alt="Needle-free Hydrafacial" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/hydrafacial.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/hydrafacial.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">11 · Hydrafacial</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">无针水光</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Needle-free Hydrafacial</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">No-needle mesotherapy. Hydration and brightening without injections.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $298</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Hydrafacial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 12: Chinese Herb Bath -->
+      <div class="treatments-05-card" data-index="11" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/herb-bath.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Herb+Bath" alt="Chinese Herb Bath" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/herb-bath.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/herb-bath.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">12 · Herb Bath</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">中药泡浴</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Chinese Herb Bath</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Full-body herbal soak. Options for muscle pain, skin brightening, sleep, or detox.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $158</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Herb%20Bath" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
             <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
           </a>
         </div>
@@ -183,7 +362,7 @@
 
     var N = cards.length;
     var currentActive = 0;
-    var EXPANDED = 'calc(100% - 330px)';
+    var EXPANDED = 'calc(100% - ' + ((N - 1) * 60 + (N - 1) * 6) + 'px)';
     var COLLAPSED = '60px';
 
     function updateCards() {
@@ -224,5 +403,36 @@
         ticking = true;
       }
     }, { passive: true });
+    updateCards();
+  })();
+</script>
+
+<!-- Lazy-load video IntersectionObserver -->
+<script>
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var wrapper = entry.target;
+          var video = wrapper.querySelector('video');
+          var source = video.querySelector('source[data-src]');
+          if (source && source.dataset.src) {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+            video.load();
+            video.play().then(function() {
+              video.style.opacity = '1';
+              var img = wrapper.querySelector('img');
+              if (img) img.style.opacity = '0';
+            }).catch(function() {});
+          }
+          observer.unobserve(wrapper);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    document.querySelectorAll('.treatment-video-wrapper').forEach(function(el) {
+      observer.observe(el);
+    });
   })();
 </script>

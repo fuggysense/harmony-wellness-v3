@@ -26,96 +26,50 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
-
-    /* Marquee animation */
-    @keyframes marquee-10-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-10-track { animation: marquee-10-scroll 50s linear infinite; }
-    .marquee-10-track:hover { animation-play-state: paused; }
-
-    /* Gallery scrollbar hide */
-    .gallery-08-track::-webkit-scrollbar { display: none; }
-    .gallery-08-track { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* Footer link hover */
-    .footer-12-link:hover { color: #C4956A !important; }
-
-    /* Condition card hover */
-    .conditions-06-card:hover { background-color: #FAF7F2 !important; }
-
-    /* Philosophy pillar animation */
-    .philosophy-07-pillar {
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .philosophy-07-pillar.animate-in {
-      opacity: 1;
-      transform: translate(0, 0) !important;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-01-left, .nav-01-right { display: none !important; }
-      .nav-01-mobile { display: flex !important; }
-      .hero-02-section { min-height: 520px !important; }
-      .hero-02-welcome { font-size: 18px !important; }
-      .hero-02-heading { font-size: 42px !important; }
-      .hero-02-sub { font-size: 16px !important; }
-      .about-03-brand { font-size: 42px !important; }
-      .about-03-desc { max-width: 100% !important; }
-      .trust-04-row { flex-wrap: wrap !important; gap: 28px 40px !important; }
-      .treatments-05-section { height: auto !important; }
-      .treatments-05-sticky { position: relative !important; height: auto !important; padding: 0 24px 60px !important; }
-      .treatments-05-deck { flex-direction: column !important; height: auto !important; gap: 16px !important; }
-      .treatments-05-card { width: 100% !important; height: 420px !important; }
-      .treatments-05-label { display: none !important; }
-      .treatments-05-detail { opacity: 1 !important; }
-      .treatments-05-heading { font-size: 40px !important; }
-      .conditions-06-grid { grid-template-columns: 1fr !important; }
-      .conditions-06-heading { font-size: 40px !important; }
-      .philosophy-07-pillars { gap: 40px !important; flex-direction: column !important; }
-      .philosophy-07-char { font-size: 56px !important; }
-      .philosophy-07-heading { font-size: 40px !important; }
-      .gallery-08-img { min-width: 280px !important; height: 240px !important; }
-      .heritage-09-section { padding: 64px 20px !important; }
-      .heritage-09-heading { font-size: 36px !important; }
-      .heritage-09-poem { font-size: 15px !important; column-count: 1 !important; }
-      .heritage-09-timeline { flex-direction: column !important; gap: 24px !important; }
-      .heritage-09-row { flex-direction: column !important; gap: 40px !important; }
-      .trial-09-price { font-size: 64px !important; }
-      .trial-09-heading { font-size: 32px !important; }
-      .trial-09-includes { flex-direction: column !important; align-items: flex-start !important; }
-      .marquee-10-card { min-width: 280px !important; }
-      .contact-11-info { flex-direction: column !important; gap: 24px !important; }
-      .contact-11-buttons { flex-direction: column !important; gap: 12px !important; }
-      .contact-11-buttons a { width: 100% !important; justify-content: center !important; }
-      .footer-12-inner { flex-direction: column !important; gap: 24px !important; text-align: center !important; }
-      .footer-12-links { justify-content: center !important; flex-wrap: wrap !important; }
-      .footer-12-bottom { flex-direction: column !important; gap: 8px !important; text-align: center !important; }
-    }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #FAF7F2;">
+<body>
 
-<!-- ========== 01 NAV ========== -->
+<!-- ===== 01-nav.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 01-nav — Top navigation bar
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .nav-01-left, .nav-01-right { display: none !important; }
+    .nav-01-mobile { display: flex !important; }
+  }
+</style>
+
+<!-- EDIT: Navigation bar -->
 <nav style="background-color: #ffffff; border-bottom: 1px solid rgba(237,232,224,0.5);">
   <div style="max-width: 1400px; margin: 0 auto; padding: 24px 40px; display: flex; align-items: center; justify-content: center;">
     <div class="nav-01-left" style="display: flex; align-items: center; gap: 48px; flex: 1; justify-content: center;">
+      <!-- EDIT: Nav category 1 -->
       <a href="#treatments" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px;">
         <span style="font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: #2C2420; letter-spacing: 0.14em; text-transform: uppercase;">Massage</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 11px; color: #8A7E74;">Recharge &amp; Relax</span>
       </a>
+      <!-- EDIT: Nav category 2 -->
       <a href="#treatments" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px;">
         <span style="font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: #2C2420; letter-spacing: 0.14em; text-transform: uppercase;">TCM</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 11px; color: #8A7E74;">Restore Balance</span>
       </a>
+      <!-- EDIT: Nav category 3 -->
       <a href="#treatments" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px;">
         <span style="font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: #2C2420; letter-spacing: 0.14em; text-transform: uppercase;">Physio</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 11px; color: #8A7E74;">Evidence-Based</span>
       </a>
     </div>
+    <!-- EDIT: Logo -->
     <div style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0 48px; flex-shrink: 0;">
       <span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 600; color: #C4956A; letter-spacing: 0.06em; line-height: 1;">元泰堂</span>
       <span style="font-family: 'Figtree', sans-serif; font-size: 9px; font-weight: 600; color: #8A7E74; letter-spacing: 0.18em; text-transform: uppercase;">Harmony Wellness</span>
@@ -129,11 +83,13 @@
         <span style="font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: #2C2420; letter-spacing: 0.14em; text-transform: uppercase;">Our Story</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 11px; color: #8A7E74;">500-Year Heritage</span>
       </a>
+      <!-- EDIT: Book Now CTA link -->
       <a href="https://wa.me/6590897778" target="_blank" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px;">
         <span style="font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: #C4956A; letter-spacing: 0.14em; text-transform: uppercase;">Book Now</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 11px; color: #8A7E74;">Special Offers</span>
       </a>
     </div>
+    <!-- Mobile nav -->
     <div class="nav-01-mobile" style="display: none; align-items: center; justify-content: space-between; width: 100%;">
       <span style="font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 600; color: #C4956A;">元泰堂</span>
       <a href="https://wa.me/6590897778" target="_blank" style="padding: 8px 18px; background-color: #C4956A; border-radius: 4px; text-decoration: none;">
@@ -143,17 +99,44 @@
   </div>
 </nav>
 
-<!-- ========== 02 HERO ========== -->
+
+<!-- ===== 02-hero.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 02-hero — Full-viewport hero with parallax background
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .hero-02-section { min-height: 520px !important; }
+    .hero-02-welcome { font-size: 18px !important; }
+    .hero-02-heading { font-size: 42px !important; }
+    .hero-02-sub { font-size: 16px !important; }
+  }
+</style>
+
+<!-- EDIT: Hero section -->
 <section class="hero-02-section" style="min-height: 720px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+  <!-- EDIT: Hero background video — replace src with your video URL -->
   <video autoplay muted loop playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;" poster="https://placehold.co/1440x720/3d2e24/C4956A?text=Treatment+Room+Photo">
     <source src="" type="video/mp4">
   </video>
+  <!-- EDIT: Hero background image fallback — replace URL with your photo -->
   <div class="hero-02-parallax" style="position: absolute; inset: 0; background-image: url('https://placehold.co/1440x720/3d2e24/C4956A?text=Treatment+Room+Photo'); background-size: cover; background-position: center; z-index: 0;"></div>
   <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,27,24,0.15) 0%, rgba(30,27,24,0.45) 60%, rgba(250,247,242,1) 100%); z-index: 1;"></div>
   <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 0 24px; margin-top: -60px;">
+    <!-- EDIT: Welcome line -->
     <p class="hero-02-welcome" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 24px; font-weight: 400; color: rgba(250,247,242,0.85); font-style: italic; margin: 0;">Welcome to 元泰堂</p>
+    <!-- EDIT: Hero headline -->
     <h1 class="hero-02-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 76px; font-weight: 400; color: #FAF7F2; line-height: 1.06; letter-spacing: -0.02em; margin: 0;">Release, Restore &amp; Replenish</h1>
-    <p class="hero-02-sub" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; font-weight: 400; color: rgba(250,247,242,0.7); font-style: italic; margin: 0;">In 500 years of healing tradition</p>
+    <!-- EDIT: Hero subheadline -->
+    <p class="hero-02-sub" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; font-weight: 400; color: rgba(250,247,242,0.7); font-style: italic; margin: 0;">Yuan Tai Tang, since 1520</p>
     <a href="#treatments" style="display: inline-flex; align-items: center; justify-content: center; padding: 18px 56px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.4); border-radius: 4px; text-decoration: none; margin-top: 28px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
       <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.16em; text-transform: uppercase;">Explore Treatments</span>
     </a>
@@ -163,12 +146,48 @@
   </div>
 </section>
 
-<!-- ========== 03 ABOUT ========== -->
+<!-- Parallax JS -->
+<script>
+  (function() {
+    var heroBg = document.querySelector('.hero-02-parallax');
+    if (heroBg) {
+      window.addEventListener('scroll', function() {
+        var scrolled = window.pageYOffset;
+        heroBg.style.transform = 'translateY(' + (scrolled * 0.35) + 'px)';
+      }, { passive: true });
+    }
+  })();
+</script>
+
+
+<!-- ===== 03-about.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 03-about — Brand introduction
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .about-03-brand { font-size: 42px !important; }
+    .about-03-desc { max-width: 100% !important; }
+  }
+</style>
+
+<!-- EDIT: About section -->
 <section id="about" style="background-color: #FAF7F2; padding: 120px 24px 100px;">
   <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+    <!-- EDIT: Brand name display -->
     <h2 class="about-03-brand" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 64px; font-weight: 400; color: #8A7E74; letter-spacing: 0.08em; margin: 0; line-height: 1.1;">HARMONY WELLNESS</h2>
     <div style="width: 28px; height: 1px; background-color: #C4956A;"></div>
+    <!-- EDIT: Service categories in Chinese -->
     <p style="font-family: 'Noto Serif SC', serif; font-size: 18px; color: #8A7E74; margin: 0; letter-spacing: 0.1em;">推拿 · 针灸 · 理疗 · 养生</p>
+    <!-- EDIT: Brand description -->
     <p class="about-03-desc" style="font-family: 'Figtree', sans-serif; font-size: 18px; color: #6B5F56; line-height: 1.75; max-width: 560px; margin: 0;">Rooted in 500 years of Yuan Tai Tang healing tradition, we combine Traditional Chinese Medicine with modern physiotherapy. MOH-registered clinic at Orchard Road, open daily till 3 AM.</p>
     <a href="#philosophy" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 44px; border: 1px solid #8A7E74; border-radius: 4px; text-decoration: none; margin-top: 12px; transition: background-color 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(44,36,32,0.03)';this.style.borderColor='#2C2420'" onmouseout="this.style.backgroundColor='transparent';this.style.borderColor='#8A7E74'">
       <span style="font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 500; color: #6B5F56; letter-spacing: 0.12em; text-transform: uppercase;">Our Approach</span>
@@ -176,26 +195,51 @@
   </div>
 </section>
 
-<!-- ========== 04 TRUST BADGES ========== -->
+
+<!-- ===== 04-trust.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 04-trust — Trust badges row
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .trust-04-row { flex-wrap: wrap !important; gap: 28px 40px !important; }
+  }
+</style>
+
+<!-- EDIT: Trust badges -->
 <section style="background-color: #FAF7F2; padding: 40px 24px 100px;">
   <div style="max-width: 1000px; margin: 0 auto;">
     <div class="trust-04-row" style="display: flex; justify-content: center; align-items: flex-start; gap: 56px;">
+      <!-- Badge 1: MOH -->
       <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4956A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <!-- EDIT: Trust badge label -->
         <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420; text-align: center;">MOH Registered</span>
       </div>
+      <!-- Badge 2: Heritage -->
       <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
         <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 36px; color: #C4956A; line-height: 1;">500</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420; text-align: center;">Year Heritage</span>
       </div>
+      <!-- Badge 3: Insurance -->
       <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4956A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
         <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420; text-align: center;">Insurance Claimable</span>
       </div>
+      <!-- Badge 4: Reviews -->
       <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 36px; color: #C4956A; line-height: 1;">4.9&#9733;</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 36px; color: #C4956A; line-height: 1;">4.9<span style="font-size: 18px;">&#9733;</span></span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420; text-align: center;">Google Reviews</span>
       </div>
+      <!-- Badge 5: Treatments -->
       <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
         <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 36px; color: #C4956A; line-height: 1;">10K+</span>
         <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420; text-align: center;">Treatments Given</span>
@@ -204,336 +248,388 @@
   </div>
 </section>
 
-<!-- ========== 05 TREATMENTS (Scroll-Pinned Card Reveal) ========== -->
-<section class="treatments-05-section" id="treatments" style="position: relative; height: 500vh; background-color: #FAF7F2;">
+
+<!-- ===== 05-treatments.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 05-treatments — Scroll-pinned treatment card reveal
+  NOTE: This section uses scroll-pinning JS. The outer section height scales with card count.
+  On mobile (<768px), cards stack vertically with no scroll-pin behavior.
+  Video placeholders use IntersectionObserver — no video bytes load until near-viewport.
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .treatments-05-section { height: auto !important; }
+    .treatments-05-sticky { position: relative !important; height: auto !important; padding: 0 24px 60px !important; }
+    .treatments-05-deck { flex-direction: column !important; height: auto !important; gap: 16px !important; }
+    .treatments-05-card { width: 100% !important; height: 420px !important; }
+    .treatments-05-label { display: none !important; }
+    .treatments-05-detail { opacity: 1 !important; }
+    .treatments-05-heading { font-size: 40px !important; }
+  }
+  .treatment-video-wrapper { position: absolute; inset: 0; }
+</style>
+
+<!-- EDIT: Treatments section -->
+<section class="treatments-05-section" id="treatments" style="position: relative; height: 1000vh; background-color: #FAF7F2;">
   <div class="treatments-05-sticky" style="position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 24px;">
+    <!-- Section heading -->
     <div style="text-align: center; margin-bottom: 32px;">
       <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Signature Treatments</span>
-      <h2 class="treatments-05-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">Recommended for You</h2>
+      <h2 class="treatments-05-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">What We Offer</h2>
       <p style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74; margin: 12px 0 0;">Scroll to explore each treatment</p>
     </div>
+    <!-- Card deck -->
     <div class="treatments-05-deck" style="max-width: 1200px; width: 100%; display: flex; gap: 6px; height: 60vh; overflow: hidden;">
-      <div class="treatments-05-card" data-index="0" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Tuina+Massage" alt="Tuina treatment" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+
+      <!-- Card 1: Tuina (starts expanded) -->
+      <div class="treatments-05-card" data-index="0" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: calc(100% - 690px); transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/tuina.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Tuina+Massage" alt="Tuina Massage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/tuina.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/tuina.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;"><span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">01 · Tuina</span></div>
-        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">01 · Tuina</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 1; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">推拿按摩 · 镇店之宝</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Tuina Massage</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Deep tissue technique targeting meridian blockages and muscle tension. Our signature treatment — the one locals keep coming back for.</p>
-          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span></div>
-          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Tuina" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); width: fit-content;"><span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span></a>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Deep tissue massage along meridian lines. 60 minutes, full body.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Tuina" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
         </div>
       </div>
+
+      <!-- Card 2: Himalaya + Moxibustion (Trial) -->
       <div class="treatments-05-card" data-index="1" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Himalaya+%2B+Moxibustion" alt="Himalaya + Moxibustion" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/himalaya-salt.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Himalaya+%2B+Moxibustion" alt="Himalaya Salt Massage + Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/himalaya-salt.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/himalaya-salt.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); padding: 5px 14px; background-color: #C4956A; border-radius: 4px; z-index: 2; white-space: nowrap;"><span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #fff; letter-spacing: 0.06em; text-transform: uppercase;">Trial $89</span></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;"><span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">02 · Trial</span></div>
+        <!-- Trial badge -->
+        <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); padding: 5px 14px; background-color: #C4956A; border-radius: 4px; z-index: 2; white-space: nowrap;">
+          <span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #fff; letter-spacing: 0.06em; text-transform: uppercase;">Trial $89</span>
+        </div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">02 · Trial</span>
+        </div>
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">喜马拉雅按摩 + 艾灸</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Himalaya + Moxibustion</h3>
           <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Himalaya salt massage combined with traditional moxibustion. Includes a full body assessment. First-time visitors only.</p>
-          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$89</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5); text-decoration: line-through;">$224</span></div>
-          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20the%20%2489%20trial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: #C4956A; border-radius: 4px; text-decoration: none; width: fit-content;"><span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #fff; letter-spacing: 0.12em; text-transform: uppercase;">Claim Trial</span></a>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$89</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5); text-decoration: line-through;">$224</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20the%20%2489%20trial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: #C4956A; border-radius: 4px; text-decoration: none; width: fit-content; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #fff; letter-spacing: 0.12em; text-transform: uppercase;">Claim Trial</span>
+          </a>
         </div>
       </div>
+
+      <!-- Card 3: Acupuncture -->
       <div class="treatments-05-card" data-index="2" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Acupuncture" alt="Acupuncture" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/acupuncture.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Acupuncture" alt="Acupuncture" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/acupuncture.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/acupuncture.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;"><span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">03 · Acupuncture</span></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">03 · Acupuncture</span>
+        </div>
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">针灸 · 中医</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Acupuncture</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Precision needling along meridian points to restore energy flow and relieve chronic pain. MOH-registered practitioners.</p>
-          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ per area</span></div>
-          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Acupuncture" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); width: fit-content;"><span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span></a>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">For back pain, migraines, and joint stiffness. MOH-registered practitioners.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$88</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ per area</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Acupuncture" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
         </div>
       </div>
+
+      <!-- Card 4: Fasciotome -->
       <div class="treatments-05-card" data-index="3" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Fasciotome" alt="Fasciotome" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/fasciotome.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Fasciotome" alt="Fasciotome Therapy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/fasciotome.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/fasciotome.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;"><span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">04 · Fasciotome</span></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">04 · Fasciotome</span>
+        </div>
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">筋膜刀 · 6个部位</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Fasciotome Therapy</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Advanced soft tissue instrument therapy. Targets six treatment areas to release fascial adhesions and improve mobility.</p>
-          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$128</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span></div>
-          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Fasciotome" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); width: fit-content;"><span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span></a>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Instrument-assisted soft tissue release. Head, neck, back, lumbar, limbs, or plantar.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$128</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Fasciotome" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
         </div>
       </div>
+
+      <!-- Card 5: Physiotherapy -->
       <div class="treatments-05-card" data-index="4" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Physiotherapy" alt="Physiotherapy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div class="treatment-video-wrapper" data-video-src="videos/physiotherapy.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Physiotherapy" alt="Physiotherapy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/physiotherapy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/physiotherapy.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;"><span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">05 · Physio</span></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">05 · Physio</span>
+        </div>
         <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">物理治疗 · 14种疗法</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Physiotherapy</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Evidence-based rehabilitation across 14 modalities. Combines modern techniques with TCM assessment for faster recovery.</p>
-          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $150</span></div>
-          <a href="https://wa.me/6590897778?text=Hi%2C%20Physiotherapy%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); width: fit-content;"><span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span></a>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Post-surgery rehab, sports injuries, chronic pain, scoliosis. 14 treatment types.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $150</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20Physiotherapy%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
         </div>
       </div>
-      <div class="treatments-05-card" data-index="5" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: calc(100% - 330px); transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
-        <img src="https://placehold.co/600x800/3d2e24/C4956A?text=TCM+Facials" alt="TCM Beauty" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+
+      <!-- Card 6: TCM Beauty -->
+      <div class="treatments-05-card" data-index="5" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/tcm-beauty.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=TCM+Facials" alt="TCM Facials and Beauty" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/tcm-beauty.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/tcm-beauty.mp4" type="video/mp4">
+          </video>
+        </div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
-        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">06 · Beauty</span></div>
-        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 1; transition: opacity 0.3s 0.1s;">
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">06 · Beauty</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
           <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">美容护理</span>
           <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">TCM Facials &amp; Beauty</h3>
-          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">TCM-rooted facial treatments that work with your body's energy systems. Natural rejuvenation, not just surface-level care.</p>
-          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $88</span></div>
-          <a href="https://wa.me/6590897778?text=Hi%2C%20Beauty%20treatment%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); width: fit-content;"><span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span></a>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Basic facials, meridian lifting, deep pore cleansing, lymphatic detox.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $88</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20Beauty%20treatment%20enquiry" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ========== 06 CONDITIONS ========== -->
-<section style="background-color: #F4EFE8; padding: 120px 24px;">
-  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 48px;">
-    <div style="text-align: center;">
-      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Find Relief</span>
-      <h2 class="conditions-06-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; margin: 0;">What We Treat</h2>
-    </div>
-    <div class="conditions-06-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;">
-      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%27m%20experiencing%20back%20and%20neck%20pain" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span><div><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Back &amp; Neck Pain</span><span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">腰颈疼痛</span></div></a>
-      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%20have%20cold%20limbs%20and%20poor%20circulation" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span><div><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Cold Limbs &amp; Poor Circulation</span><span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">手脚冰凉</span></div></a>
-      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%27m%20dealing%20with%20stress%20and%20sleep%20issues" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span><div><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Stress &amp; Sleep Issues</span><span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">压力与失眠</span></div></a>
-      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%20have%20a%20sports%20injury" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span><div><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Sports Injury Recovery</span><span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">运动损伤</span></div></a>
-      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%27m%20experiencing%20chronic%20fatigue" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span><div><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Chronic Fatigue</span><span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">慢性疲劳</span></div></a>
-      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%20have%20tension%20headaches" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span><div><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Tension &amp; Headaches</span><span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">紧张与头痛</span></div></a>
-    </div>
-    <p style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; text-align: center;">Tap a condition to message us on WhatsApp · 点击症状直接WhatsApp咨询</p>
-  </div>
-</section>
-
-<!-- ========== 07 THREE PILLARS ========== -->
-<section id="philosophy" style="background-color: #FAF7F2; padding: 100px 24px 40px;">
-  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 48px;">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
-      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">Our Approach</span>
-      <h2 class="philosophy-07-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">The Three Pillars</h2>
-    </div>
-    <div class="philosophy-07-pillars" style="display: flex; align-items: flex-start; gap: 80px; justify-content: center;">
-      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateX(-40px);"><span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">排</span><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Release</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Clear toxins and stagnation</span></div>
-      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateY(40px);"><span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">通</span><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Restore</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Unblock meridians and circulation</span></div>
-      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateX(40px);"><span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">补</span><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Replenish</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Strengthen qi and vitality</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 08 GALLERY ========== -->
-<section style="background-color: #FAF7F2; padding: 40px 0 100px;">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; margin-bottom: 32px; text-align: center;">
-    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">Our Space</span>
-  </div>
-  <div class="gallery-08-track" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(24px, calc((100vw - 1200px) / 2));">
-    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;"><img src="https://placehold.co/480x360/3d2e24/C4956A?text=Treatment+Room" alt="Treatment room" style="width: 100%; height: 100%; object-fit: cover;"></div>
-    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;"><img src="https://placehold.co/480x360/3d2e24/C4956A?text=Herbal+Medicine" alt="Herbal medicine" style="width: 100%; height: 100%; object-fit: cover;"></div>
-    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;"><img src="https://placehold.co/480x360/3d2e24/C4956A?text=Hands-On+Treatment" alt="Treatment" style="width: 100%; height: 100%; object-fit: cover;"></div>
-    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;"><img src="https://placehold.co/480x360/3d2e24/C4956A?text=Clinic+Interior" alt="Clinic" style="width: 100%; height: 100%; object-fit: cover;"></div>
-    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;"><img src="https://placehold.co/480x360/3d2e24/C4956A?text=Equipment+%26+Tools" alt="Equipment" style="width: 100%; height: 100%; object-fit: cover;"></div>
-  </div>
-</section>
-
-<!-- ========== 09 HERITAGE ========== -->
-<section id="heritage" style="background-color: #1E1B18;">
-  <div class="heritage-09-section" style="max-width: 1000px; margin: 0 auto; padding: 100px 40px;">
-    <div style="text-align: center; margin-bottom: 56px;">
-      <span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 16px;">Our Heritage</span>
-      <h2 class="heritage-09-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 46px; font-weight: 400; color: #FAF7F2; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px 0;">Five Centuries of Healing</h2>
-      <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 16px; color: rgba(250,247,242,0.5); line-height: 1.6; max-width: 560px; margin: 0 auto;">From a humble clinic in Ming Dynasty China to Orchard Road, Singapore — the Yuan Tai Tang tradition endures.</p>
-    </div>
-    <div class="heritage-09-row" style="display: flex; gap: 56px; align-items: flex-start; margin-bottom: 56px;">
-      <div style="flex: 1;">
-        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0 0 20px 0;">In the fifteenth year of Emperor Zhengde's reign (1520), in the ancient town of Zhouzhuang, a practitioner named Yuan Jiaji established a humble clinic. He called it "Yuan Tai Tang" — Yuan's Hall of Great Peace.</p>
-        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0 0 20px 0;">Yuan Jiaji was not merely a physician. He was a guardian of tradition — a man who believed medicine was not a trade, but a calling. He treated the poor without payment and never turned a patient away.</p>
-        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0 0 20px 0;">Under the reign of Emperor Qianlong, the clinic's reputation flourished. Through five centuries, the Yuan family refined their art — never chasing fame, always pursuing truth in healing.</p>
-        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0;">Now, Yuan Jinsheng — the latest inheritor — has brought Yuan Tai Tang to Singapore. The methods are ancient. The clinic is modern. The principle is unchanged.</p>
-      </div>
-      <div style="flex: 1;">
-        <div style="border-left: 2px solid #C4956A; padding-left: 24px; margin-bottom: 32px;">
-          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 18px; color: #C4956A; line-height: 2; margin: 0;">不追虚浮，只守正道</p>
-          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 18px; color: #C4956A; line-height: 2; margin: 0;">不重空言，唯重实效</p>
-          <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.4); margin: 12px 0 0 0; font-style: italic;">"Don't chase empty trends, only keep the righteous path.<br>Don't value empty words, only value real results."</p>
+      <!-- Card 7: Herbal Sleep Head Therapy -->
+      <div class="treatments-05-card" data-index="6" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/herbal-head-therapy.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Herbal+Head+Therapy" alt="Herbal Sleep Head Therapy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/herbal-head-therapy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/herbal-head-therapy.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="heritage-09-poem" style="column-count: 2; column-gap: 24px;">
-          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 16px; color: rgba(250,247,242,0.35); line-height: 2.2; margin: 0;">岐黄肇始，医道千年。<br>悬壶济世，仁心相传。<br>明朝正德，周庄之畔。<br>元泰堂立，杏林初现。</p>
-          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 16px; color: rgba(250,247,242,0.35); line-height: 2.2; margin: 0;">五百年来，一脉相承。<br>不为名利，只为苍生。<br>元泰堂者，非仅医馆。<br>乃是承诺，跨越时空。</p>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">07 · Head Therapy</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">安眠草本头疗</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Herbal Sleep Head Therapy</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">90-minute herbal scalp treatment. For insomnia and tension headaches.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$158</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 90 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Herbal%20Head%20Therapy" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
         </div>
       </div>
-    </div>
-    <div style="border-top: 1px solid rgba(196,149,106,0.2); padding-top: 40px;">
-      <div class="heritage-09-timeline" style="display: flex; justify-content: space-between; gap: 16px;">
-        <div style="text-align: center; flex: 1;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; color: #C4956A; display: block; margin-bottom: 6px;">1520</span><span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.08em; text-transform: uppercase;">Ming Dynasty</span><p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.5); margin: 8px 0 0 0; line-height: 1.5;">Yuan Jiaji founds Yuan Tai Tang in Zhouzhuang</p></div>
-        <div style="text-align: center; flex: 1;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; color: #C4956A; display: block; margin-bottom: 6px;">1735</span><span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.08em; text-transform: uppercase;">Qing Dynasty</span><p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.5); margin: 8px 0 0 0; line-height: 1.5;">Emperor Qianlong's recognition elevates reputation</p></div>
-        <div style="text-align: center; flex: 1;"><span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; color: #C4956A; display: block; margin-bottom: 6px;">2020s</span><span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.08em; text-transform: uppercase;">Modern Singapore</span><p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.5); margin: 8px 0 0 0; line-height: 1.5;">Yuan Jinsheng brings the lineage to Orchard Road</p></div>
+
+      <!-- Card 8: Ear Candling + Eye Moxa -->
+      <div class="treatments-05-card" data-index="7" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/ear-eye-moxa.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Ear+%2B+Eye+Moxa" alt="Ear Candling + Eye Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/ear-eye-moxa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/ear-eye-moxa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">08 · Ear + Eye</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">采耳 + 眼灸</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Ear Candling + Eye Moxa</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Ear cleaning with warm eye moxibustion. 60 minutes.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$68</span>
+            <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.5);">/ 60 min</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Ear%20Candling" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
       </div>
-    </div>
-    <div style="text-align: center; margin-top: 40px;"><span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.3); letter-spacing: 0.1em; text-transform: uppercase;">MOH Registered Healthcare Clinic · Singapore</span></div>
-  </div>
+
+      <!-- Card 9: Gourd Moxibustion -->
+      <div class="treatments-05-card" data-index="8" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/gourd-moxa.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Gourd+Moxibustion" alt="Gourd Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/gourd-moxa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/gourd-moxa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">09 · Gourd Moxa</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">葫芦灸 · 8穴位</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Gourd Moxibustion</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Full-body moxibustion across 8 acupoints using a traditional gourd.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$188</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Gourd%20Moxibustion" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 10: Handheld Meridian Moxibustion -->
+      <div class="treatments-05-card" data-index="9" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/handheld-moxa.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Handheld+Moxa" alt="Handheld Meridian Moxibustion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/handheld-moxa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/handheld-moxa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">10 · Handheld Moxa</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">手持灸 · 经络巡灸</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Handheld Meridian Moxa</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Meridian patrol moxibustion. Practitioner follows your body's meridian lines by hand.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">$168</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Handheld%20Moxibustion" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 11: Needle-free Hydrafacial -->
+      <div class="treatments-05-card" data-index="10" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/hydrafacial.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Hydrafacial" alt="Needle-free Hydrafacial" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/hydrafacial.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/hydrafacial.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">11 · Hydrafacial</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">无针水光</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Needle-free Hydrafacial</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">No-needle mesotherapy. Hydration and brightening without injections.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $298</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Hydrafacial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 12: Chinese Herb Bath -->
+      <div class="treatments-05-card" data-index="11" style="position: relative; overflow: hidden; border-radius: 12px; flex-shrink: 0; width: 60px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: width;">
+        <div class="treatment-video-wrapper" data-video-src="videos/herb-bath.mp4">
+          <img src="https://placehold.co/600x800/3d2e24/C4956A?text=Herb+Bath" alt="Chinese Herb Bath" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy">
+          <video muted playsinline loop preload="none" poster="posters/herb-bath.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s;">
+            <source data-src="videos/herb-bath.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,36,32,0.15), rgba(44,36,32,0.85));"></div>
+        <div class="treatments-05-label" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s;">
+          <span style="writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: rgba(250,247,242,0.8); letter-spacing: 0.2em; text-transform: uppercase;">12 · Herb Bath</span>
+        </div>
+        <div class="treatments-05-detail" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; opacity: 0; transition: opacity 0.3s 0.1s;">
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #C4956A; margin-bottom: 8px;">中药泡浴</span>
+          <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #FAF7F2; margin: 0; letter-spacing: -0.02em;">Chinese Herb Bath</h3>
+          <p style="font-family: 'Figtree', sans-serif; font-size: 17px; color: rgba(250,247,242,0.7); line-height: 1.6; margin: 12px 0 20px; max-width: 420px;">Full-body herbal soak. Options for muscle pain, skin brightening, sleep, or detox.</p>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px;">
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; color: #C4956A;">from $158</span>
+          </div>
+          <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20to%20book%20Herb%20Bath" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background-color: rgba(250,247,242,0.12); border: 1px solid rgba(250,247,242,0.3); border-radius: 4px; text-decoration: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: fit-content; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(250,247,242,0.22)'" onmouseout="this.style.backgroundColor='rgba(250,247,242,0.12)'">
+            <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #FAF7F2; letter-spacing: 0.12em; text-transform: uppercase;">Book Now</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /deck -->
+  </div><!-- /sticky -->
 </section>
 
-<!-- Gallery-to-Trial gradient transition -->
-<div style="height: 100px; background: linear-gradient(to bottom, #1E1B18, #2C2420);"></div>
-
-<!-- ========== 10 TRIAL OFFER ========== -->
-<section style="position: relative; overflow: hidden; padding: 140px 24px;">
-  <img src="https://placehold.co/1440x800/2C2420/C4956A?text=Treatment+Room+Ambiance" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-  <div style="position: absolute; inset: 0; background: rgba(44,36,32,0.88); z-index: 1;"></div>
-  <div style="position: relative; z-index: 2; max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
-    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">First-Time Visitors</span>
-    <span class="trial-09-price" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 100px; color: #C4956A; letter-spacing: -0.03em; line-height: 1;">$89</span>
-    <span style="font-family: 'Figtree', sans-serif; font-size: 16px; color: #8A7E74;"><span style="text-decoration: line-through;">$224</span> usual price</span>
-    <div style="width: 28px; height: 1px; background-color: #C4956A; margin: 4px 0;"></div>
-    <h3 class="trial-09-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; font-weight: 400; color: #FAF7F2; margin: 0; line-height: 1.2;">Himalaya Massage +<br>Moxibustion Combo</h3>
-    <p style="font-family: 'Noto Serif SC', serif; font-size: 15px; color: rgba(196,149,106,0.7); margin: 0;">喜马拉雅按摩 + 艾灸 · 含全身状况评估</p>
-    <div class="trial-09-includes" style="display: flex; gap: 32px; margin: 16px 0 8px; justify-content: center; flex-wrap: wrap;">
-      <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #C4956A; font-size: 16px;">&#10003;</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Himalaya salt massage (60 min)</span></div>
-      <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #C4956A; font-size: 16px;">&#10003;</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Moxibustion treatment</span></div>
-      <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #C4956A; font-size: 16px;">&#10003;</span><span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Full body assessment</span></div>
-    </div>
-    <p style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.5); margin: 0;">No hard sell. No packages. Insurance-claimable treatments available.</p>
-    <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20the%20%2489%20trial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 20px 56px; background-color: #C4956A; border-radius: 4px; text-decoration: none; margin-top: 8px; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 4px 24px rgba(196,149,106,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
-      <span style="font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 600; color: #ffffff; letter-spacing: 0.1em; text-transform: uppercase;">Claim Your Trial — $89</span>
-    </a>
-  </div>
-</section>
-
-<!-- ========== 11 TESTIMONIALS ========== -->
-<section style="background-color: #FAF7F2; padding: 120px 0; overflow: hidden;">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; text-align: center; margin-bottom: 56px;">
-    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Patient Stories</span>
-    <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; margin: 0;">What Our Guests Say</h2>
-  </div>
-  <div style="width: 100%;">
-    <div class="marquee-10-track" style="display: flex; gap: 24px; width: fit-content;">
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Three years of chronic lower back pain from desk work. After six sessions combining acupuncture and physio, I can sit through a full workday without discomfort."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Rachel Tan</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Marketing Manager, Tanjong Pagar</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Chronically cold hands and feet — even in Singapore. After a warming protocol with moxibustion, my circulation actually came back. Haven't worn socks to bed since."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Lim Wei Jie</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Software Engineer, Bukit Timah</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Went for the $89 trial expecting the usual hard sell. Instead, the therapist spent 20 minutes explaining my condition. Zero pressure. I signed up for a follow-up on my own terms."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Priya Nair</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Teacher, Clementi</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Shoulder injury from overhead press — couldn't raise my arm for two months. Four physio sessions here and full range of motion came back. My physio actually understood gym movements."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Marcus Ng</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Personal Trainer, Tiong Bahru</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"High-stress job, hadn't slept through the night in months. After my first tuina and moxibustion session, I slept seven hours straight. I come bi-weekly now — it's my reset button."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Sarah Lim</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Lawyer, Raffles Place</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Brought my 72-year-old mother for chronic knee pain. After eight sessions, she walks without limping. She actually looks forward to her appointments — that says everything."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">David Chen</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · IT Director, Ang Mo Kio</span></div></div>
-      <!-- Duplicated for seamless loop -->
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Three years of chronic lower back pain from desk work. After six sessions combining acupuncture and physio, I can sit through a full workday without discomfort."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Rachel Tan</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Marketing Manager, Tanjong Pagar</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Chronically cold hands and feet — even in Singapore. After a warming protocol with moxibustion, my circulation actually came back. Haven't worn socks to bed since."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Lim Wei Jie</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Software Engineer, Bukit Timah</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Went for the $89 trial expecting the usual hard sell. Instead, the therapist spent 20 minutes explaining my condition. Zero pressure. I signed up for a follow-up on my own terms."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Priya Nair</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Teacher, Clementi</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Shoulder injury from overhead press — couldn't raise my arm for two months. Four physio sessions here and full range of motion came back. My physio actually understood gym movements."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Marcus Ng</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Personal Trainer, Tiong Bahru</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"High-stress job, hadn't slept through the night in months. After my first tuina and moxibustion session, I slept seven hours straight. I come bi-weekly now — it's my reset button."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Sarah Lim</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Lawyer, Raffles Place</span></div></div>
-      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);"><p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Brought my 72-year-old mother for chronic knee pain. After eight sessions, she walks without limping. She actually looks forward to her appointments — that says everything."</p><div style="width: 20px; height: 1px; background-color: #C4956A;"></div><div><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">David Chen</span><span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · IT Director, Ang Mo Kio</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 12 CONTACT ========== -->
-<section id="contact" style="background-color: #FAF7F2; padding: 120px 24px;">
-  <div style="max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
-    <span style="font-family: 'Noto Serif SC', serif; font-size: 36px; color: rgba(196,149,106,0.15);">養生</span>
-    <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; margin: 0; line-height: 1.15;">Visit Us</h2>
-    <p style="font-family: 'Figtree', sans-serif; font-size: 18px; color: #6B5F56; line-height: 1.65; margin: 0;">Walk in or book your first trial at $89.<br>No hard sell, no packages — just results.</p>
-    <div style="width: 28px; height: 1px; background-color: #C4956A;"></div>
-    <div class="contact-11-buttons" style="display: flex; gap: 16px; margin-top: 4px;">
-      <a href="https://wa.me/6590897778" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 16px 44px; background-color: #4A7C6F; border-radius: 4px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 4px 16px rgba(74,124,111,0.25)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'"><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #fff; letter-spacing: 0.1em; text-transform: uppercase;">WhatsApp Us</span></a>
-      <a href="tel:+6590897778" style="display: inline-flex; align-items: center; justify-content: center; padding: 16px 44px; border: 1px solid #8A7E74; border-radius: 4px; text-decoration: none; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(44,36,32,0.03)'" onmouseout="this.style.backgroundColor='transparent'"><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: #6B5F56; letter-spacing: 0.1em; text-transform: uppercase;">Call +65 9089 7778</span></a>
-    </div>
-    <div class="contact-11-info" style="display: flex; gap: 56px; margin-top: 24px;">
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #C4956A; letter-spacing: 0.12em; text-transform: uppercase;">Open Daily</span><span style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74;">10:00 AM – 3:00 AM</span></div>
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #C4956A; letter-spacing: 0.12em; text-transform: uppercase;">Location</span><span style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74; text-align: center;">400 Orchard Rd, Orchard Tower<br>#03-04 – #03-45, S238875</span></div>
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #C4956A; letter-spacing: 0.12em; text-transform: uppercase;">Registered</span><span style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74;">MOH Healthcare Clinic</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 13 FOOTER ========== -->
-<footer style="background-color: #1E1B18;">
-  <div class="footer-12-inner" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 600; color: #C4956A;">元泰堂</span><span style="font-family: 'Figtree', sans-serif; font-size: 12px; color: #8A7E74; letter-spacing: 0.12em; text-transform: uppercase;">Harmony Wellness</span></div>
-    <div class="footer-12-links" style="display: flex; gap: 32px;">
-      <a href="#treatments" class="footer-12-link" style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.4); text-decoration: none; transition: color 0.2s ease;">Treatments</a>
-      <a href="#philosophy" class="footer-12-link" style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.4); text-decoration: none; transition: color 0.2s ease;">Our Approach</a>
-      <a href="#contact" class="footer-12-link" style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.4); text-decoration: none; transition: color 0.2s ease;">Contact</a>
-    </div>
-  </div>
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 40px;">
-    <div style="border-top: 1px solid rgba(138,126,116,0.1); padding-top: 40px; display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;">
-      <a href="wechat-qr.png" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;"><img src="wechat-qr.png" alt="WeChat QR Code" style="width: 140px; height: 140px; border-radius: 8px; background-color: #fff; padding: 4px; object-fit: contain;"><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.5);">WeChat</span></a>
-      <a href="https://wa.me/6590897778" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;"><img src="whatsapp-qr.png" alt="WhatsApp QR Code" style="width: 140px; height: 140px; border-radius: 8px; background-color: #fff; padding: 4px; object-fit: contain;"><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.5);">WhatsApp</span></a>
-    </div>
-  </div>
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 40px;">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap;">
-      <a href="https://www.google.com/search?q=Harmony+Wellness+TCM+Reviews" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05);"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"></path><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"></path><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path></svg><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">Google Reviews</span></a>
-      <a href="https://www.facebook.com/profile.php?id=61583810402695" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05);"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">Facebook</span></a>
-      <a href="https://www.instagram.com/harmony_wellness67/" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05);"><svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#FD5;"></stop><stop offset="25%" style="stop-color:#FF543E;"></stop><stop offset="50%" style="stop-color:#C837AB;"></stop><stop offset="100%" style="stop-color:#5B51D8;"></stop></linearGradient></defs><path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">Instagram</span></a>
-      <a href="https://www.tiktok.com/@harmony_wellness_tcm" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05);"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="#25F4EE" d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0115.54 0h-3.09v16.36a2.72 2.72 0 01-2.72 2.27 2.72 2.72 0 01-2.72-2.72 2.72 2.72 0 012.72-2.72c.29 0 .57.05.83.13V10.2a5.81 5.81 0 00-.83-.06 5.82 5.82 0 105.82 5.82V9.68A7.37 7.37 0 0019.73 11V7.91a4.28 4.28 0 01-3.13-2.09z"></path><path fill="#FE2C55" d="M17.6 6.82s.51.5 0 0A4.28 4.28 0 0116.54 1h-3.09v16.36a2.72 2.72 0 01-2.72 2.27 2.72 2.72 0 01-2.72-2.72 2.72 2.72 0 012.72-2.72c.29 0 .57.05.83.13V11.2a5.81 5.81 0 00-.83-.06A5.82 5.82 0 0016.55 17V10.68A7.37 7.37 0 0020.73 12V8.91a4.28 4.28 0 01-3.13-2.09z"></path></svg><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">TikTok</span></a>
-      <a href="https://www.xiaohongshu.com/user/profile/683b00d7000000001d00a9a9" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05);"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FF2442"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.2 16.4c-.3.5-.8.8-1.4.8H8.2c-.6 0-1.1-.3-1.4-.8-.3-.5-.3-1.1 0-1.6l3.8-6.6c.3-.5.8-.8 1.4-.8s1.1.3 1.4.8l3.8 6.6c.3.5.3 1.1 0 1.6z"></path></svg><span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">小红书</span></a>
-    </div>
-  </div>
-  <div class="footer-12-bottom" style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; border-top: 1px solid rgba(138,126,116,0.1); display: flex; justify-content: space-between; align-items: center;">
-    <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(250,247,242,0.25);">&copy; 2026 Harmony Wellness Pte Ltd · 元泰堂养生中心</span>
-    <a href="#" style="font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(250,247,242,0.25); text-decoration: none;">Privacy Policy</a>
-  </div>
-</footer>
-
-<!-- ========== 14 WHATSAPP FAB ========== -->
-<a href="https://wa.me/6590897778" target="_blank" style="position: fixed; bottom: 24px; right: 24px; z-index: 100; width: 56px; height: 56px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.3); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
-</a>
-
-<!-- ========== SCRIPTS ========== -->
+<!-- Scroll-Pinned Card JS -->
 <script>
-  // --- Parallax on hero background ---
-  var heroBg = document.querySelector('.hero-02-parallax');
-  if (heroBg) {
-    window.addEventListener('scroll', function() {
-      var scrolled = window.pageYOffset;
-      heroBg.style.transform = 'translateY(' + (scrolled * 0.35) + 'px)';
-    }, { passive: true });
-  }
-
-  // --- Fade-in on scroll ---
-  var allSections = document.querySelectorAll('section');
-  allSections.forEach(function(el) {
-    if (el.classList.contains('treatments-05-section')) return;
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(16px)';
-    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-  });
-  var fadeObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.08 });
-  allSections.forEach(function(el) {
-    if (!el.classList.contains('treatments-05-section')) {
-      fadeObserver.observe(el);
-    }
-  });
-
-  // --- Scroll-Pinned Treatment Cards ---
   (function() {
     if (window.innerWidth <= 768) return;
+
     var section = document.querySelector('.treatments-05-section');
     var cards = document.querySelectorAll('.treatments-05-card');
     if (!section || !cards.length) return;
+
     var N = cards.length;
     var currentActive = 0;
-    var EXPANDED = 'calc(100% - 330px)';
+    var EXPANDED = 'calc(100% - ' + ((N - 1) * 60 + (N - 1) * 6) + 'px)';
     var COLLAPSED = '60px';
+
     function updateCards() {
       var rect = section.getBoundingClientRect();
       var sectionTop = -rect.top;
       var scrollable = section.offsetHeight - window.innerHeight;
+
       if (scrollable <= 0) return;
+
       var progress = Math.max(0, Math.min(1, sectionTop / scrollable));
       var activeIndex = Math.min(Math.floor(progress * N), N - 1);
+
       if (activeIndex === currentActive) return;
       currentActive = activeIndex;
+
       cards.forEach(function(card, i) {
         var label = card.querySelector('.treatments-05-label');
         var detail = card.querySelector('.treatments-05-detail');
@@ -548,16 +644,194 @@
         }
       });
     }
+
     var ticking = false;
     window.addEventListener('scroll', function() {
       if (!ticking) {
-        requestAnimationFrame(function() { updateCards(); ticking = false; });
+        requestAnimationFrame(function() {
+          updateCards();
+          ticking = false;
+        });
         ticking = true;
       }
     }, { passive: true });
+    updateCards();
   })();
+</script>
 
-  // --- Philosophy pillar stagger animation ---
+<!-- Lazy-load video IntersectionObserver -->
+<script>
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var wrapper = entry.target;
+          var video = wrapper.querySelector('video');
+          var source = video.querySelector('source[data-src]');
+          if (source && source.dataset.src) {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+            video.load();
+            video.play().then(function() {
+              video.style.opacity = '1';
+              var img = wrapper.querySelector('img');
+              if (img) img.style.opacity = '0';
+            }).catch(function() {});
+          }
+          observer.unobserve(wrapper);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    document.querySelectorAll('.treatment-video-wrapper').forEach(function(el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+
+<!-- ===== 06-conditions.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 06-conditions — Conditions grid with WhatsApp deep links
+-->
+
+<style>
+  .conditions-06-card:hover { background-color: #FAF7F2 !important; }
+  @media (max-width: 768px) {
+    .conditions-06-grid { grid-template-columns: 1fr !important; }
+    .conditions-06-heading { font-size: 40px !important; }
+  }
+</style>
+
+<!-- EDIT: Conditions section -->
+<section style="background-color: #F4EFE8; padding: 120px 24px;">
+  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 48px;">
+    <div style="text-align: center;">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Find Relief</span>
+      <h2 class="conditions-06-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; margin: 0;">What We Treat</h2>
+    </div>
+    <div class="conditions-06-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;">
+      <!-- Condition 1 -->
+      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%27m%20experiencing%20back%20and%20neck%20pain" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span>
+        <div>
+          <!-- EDIT: Condition name -->
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Back &amp; Neck Pain</span>
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">腰颈疼痛</span>
+        </div>
+      </a>
+      <!-- Condition 2 -->
+      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%20have%20cold%20limbs%20and%20poor%20circulation" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span>
+        <div>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Cold Limbs &amp; Poor Circulation</span>
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">手脚冰凉</span>
+        </div>
+      </a>
+      <!-- Condition 3 -->
+      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%27m%20dealing%20with%20stress%20and%20sleep%20issues" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span>
+        <div>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Stress &amp; Sleep Issues</span>
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">压力与失眠</span>
+        </div>
+      </a>
+      <!-- Condition 4 -->
+      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%20have%20a%20sports%20injury" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span>
+        <div>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Sports Injury Recovery</span>
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">运动损伤</span>
+        </div>
+      </a>
+      <!-- Condition 5 -->
+      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%27m%20experiencing%20chronic%20fatigue" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span>
+        <div>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Chronic Fatigue</span>
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">慢性疲劳</span>
+        </div>
+      </a>
+      <!-- Condition 6 -->
+      <a class="conditions-06-card" href="https://wa.me/6590897778?text=Hi%2C%20I%20have%20tension%20headaches" target="_blank" style="display: flex; align-items: center; gap: 14px; padding: 28px; background-color: #FAF7F2; border-radius: 10px; text-decoration: none; transition: background-color 0.2s ease;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C4956A; flex-shrink: 0;"></span>
+        <div>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420; display: block; line-height: 1.3;">Tension &amp; Headaches</span>
+          <span style="font-family: 'Noto Serif SC', serif; font-size: 13px; color: #8A7E74;">紧张与头痛</span>
+        </div>
+      </a>
+    </div>
+    <p style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; text-align: center;">Tap a condition to message us on WhatsApp · 点击症状直接WhatsApp咨询</p>
+  </div>
+</section>
+
+
+<!-- ===== 07-philosophy.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 07-philosophy — Three Pillars with stagger animation
+-->
+
+<style>
+  .philosophy-07-pillar {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .philosophy-07-pillar.animate-in {
+    opacity: 1;
+    transform: translate(0, 0) !important;
+  }
+  @media (max-width: 768px) {
+    .philosophy-07-pillars { gap: 40px !important; flex-direction: column !important; }
+    .philosophy-07-char { font-size: 56px !important; }
+    .philosophy-07-heading { font-size: 40px !important; }
+  }
+</style>
+
+<!-- EDIT: Philosophy section -->
+<section id="philosophy" style="background-color: #FAF7F2; padding: 100px 24px 40px;">
+  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 48px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">Our Approach</span>
+      <h2 class="philosophy-07-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; letter-spacing: -0.01em; margin: 0;">The Three Pillars</h2>
+    </div>
+    <div class="philosophy-07-pillars" style="display: flex; align-items: flex-start; gap: 80px; justify-content: center;">
+      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateX(-40px);">
+        <!-- EDIT: Pillar 1 character -->
+        <span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">排</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Release</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Clear toxins and stagnation</span>
+      </div>
+      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateY(40px);">
+        <!-- EDIT: Pillar 2 character -->
+        <span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">通</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Restore</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Unblock meridians and circulation</span>
+      </div>
+      <div class="philosophy-07-pillar" style="display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; max-width: 200px; transform: translateX(40px);">
+        <!-- EDIT: Pillar 3 character -->
+        <span class="philosophy-07-char" style="font-family: 'Noto Serif SC', serif; font-size: 80px; color: #C4956A; font-weight: 400; line-height: 1;">补</span>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #2C2420;">Replenish</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: #8A7E74; line-height: 1.6;">Strengthen qi and vitality</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pillar stagger animation JS -->
+<script>
   (function() {
     var pillars = document.querySelectorAll('.philosophy-07-pillar');
     if (!pillars.length) return;
@@ -566,7 +840,9 @@
         if (entry.isIntersecting) {
           var items = entry.target.querySelectorAll('.philosophy-07-pillar');
           items.forEach(function(item, i) {
-            setTimeout(function() { item.classList.add('animate-in'); }, i * 250);
+            setTimeout(function() {
+              item.classList.add('animate-in');
+            }, i * 250);
           });
           pillarObserver.unobserve(entry.target);
         }
@@ -576,6 +852,544 @@
     pillarObserver.observe(pillarContainer);
   })();
 </script>
+
+
+<!-- ===== 08-gallery.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 08-gallery — Horizontal scrolling photo gallery
+-->
+
+<style>
+  .gallery-08-track::-webkit-scrollbar { display: none; }
+  .gallery-08-track { -ms-overflow-style: none; scrollbar-width: none; }
+  @media (max-width: 768px) {
+    .gallery-08-img { min-width: 280px !important; height: 240px !important; }
+  }
+</style>
+
+<!-- EDIT: Gallery section -->
+<section style="background-color: #FAF7F2; padding: 40px 0 100px;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; margin-bottom: 32px; text-align: center;">
+    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">Our Space</span>
+  </div>
+  <div class="gallery-08-track" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(24px, calc((100vw - 1200px) / 2));">
+    <!-- EDIT: Gallery photo 1 — replace with treatment room interior -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Treatment+Room" alt="EDIT: Treatment room interior (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 2 — replace with herbal medicine shelf -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Herbal+Medicine" alt="EDIT: Chinese herbal medicine shelf (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 3 — replace with hands-on treatment -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Hands-On+Treatment" alt="EDIT: Therapist performing treatment (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 4 — replace with clinic interior -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Clinic+Interior" alt="EDIT: Clinic corridor or reception (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <!-- EDIT: Gallery photo 5 — replace with equipment -->
+    <div class="gallery-08-img" style="min-width: 360px; height: 280px; flex-shrink: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden;">
+      <img src="https://placehold.co/480x360/3d2e24/C4956A?text=Equipment+%26+Tools" alt="EDIT: Treatment equipment and tools (480x360)" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 09-heritage.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 09-heritage — Dark "Five Centuries of Healing" section
+  NOTE: DARK HERITAGE SECTION — 500-year Yuan Tai Tang lineage
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .heritage-09-section { padding: 64px 20px !important; }
+    .heritage-09-heading { font-size: 36px !important; }
+    .heritage-09-poem { font-size: 15px !important; column-count: 1 !important; }
+    .heritage-09-timeline { flex-direction: column !important; gap: 24px !important; }
+    .heritage-09-row { flex-direction: column !important; gap: 40px !important; }
+  }
+</style>
+
+<!-- EDIT: Heritage section — DARK background -->
+<section id="heritage" style="background-color: #1E1B18;">
+  <div class="heritage-09-section" style="max-width: 1000px; margin: 0 auto; padding: 100px 40px;">
+
+    <!-- EDIT: Section header -->
+    <div style="text-align: center; margin-bottom: 56px;">
+      <span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 16px;">Our Heritage</span>
+      <h2 class="heritage-09-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 46px; font-weight: 400; color: #FAF7F2; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px 0;">Five Centuries of Healing</h2>
+      <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 16px; color: rgba(250,247,242,0.5); line-height: 1.6; max-width: 560px; margin: 0 auto;">From a humble clinic in Ming Dynasty China to Orchard Road, Singapore. The Yuan Tai Tang tradition endures.</p>
+    </div>
+
+    <!-- EDIT: Heritage content — two columns -->
+    <div class="heritage-09-row" style="display: flex; gap: 56px; align-items: flex-start; margin-bottom: 56px;">
+
+      <!-- Left: Story -->
+      <div style="flex: 1;">
+        <!-- EDIT: Heritage story paragraphs -->
+        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0 0 20px 0;">In the fifteenth year of Emperor Zhengde's reign (1520), in the ancient town of Zhouzhuang, a practitioner named Yuan Jiaji established a humble clinic. He called it "Yuan Tai Tang" — Yuan's Hall of Great Peace.</p>
+
+        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0 0 20px 0;">Yuan Jiaji treated the poor without payment and never turned a patient away.</p>
+
+        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0 0 20px 0;">Under the reign of Emperor Qianlong, the clinic's reputation flourished. Through five centuries, the Yuan family kept refining their methods over generations.</p>
+
+        <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.75; margin: 0;">Now, Yuan Jinsheng, the latest inheritor, has brought Yuan Tai Tang to Singapore. The methods haven't changed, but the clinic has.</p>
+      </div>
+
+      <!-- Right: Chinese poetry -->
+      <div style="flex: 1;">
+        <!-- EDIT: Philosophy quote -->
+        <div style="border-left: 2px solid #C4956A; padding-left: 24px; margin-bottom: 32px;">
+          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 18px; color: #C4956A; line-height: 2; margin: 0;">不追虚浮，只守正道</p>
+          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 18px; color: #C4956A; line-height: 2; margin: 0;">不重空言，唯重实效</p>
+          <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.4); margin: 12px 0 0 0; font-style: italic;">"Don't chase empty trends, only keep the righteous path.<br>Don't value empty words, only value real results."</p>
+        </div>
+
+        <!-- EDIT: Heritage poem excerpt -->
+        <div class="heritage-09-poem" style="column-count: 2; column-gap: 24px;">
+          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 16px; color: rgba(250,247,242,0.35); line-height: 2.2; margin: 0;">岐黄肇始，医道千年。<br>悬壶济世，仁心相传。<br>明朝正德，周庄之畔。<br>元泰堂立，杏林初现。</p>
+          <p style="font-family: 'Noto Serif SC', Georgia, serif; font-size: 16px; color: rgba(250,247,242,0.35); line-height: 2.2; margin: 0;">五百年来，一脉相承。<br>不为名利，只为苍生。<br>元泰堂者，非仅医馆。<br>乃是承诺，跨越时空。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EDIT: Timeline -->
+    <div style="border-top: 1px solid rgba(196,149,106,0.2); padding-top: 40px;">
+      <div class="heritage-09-timeline" style="display: flex; justify-content: space-between; gap: 16px;">
+
+        <!-- EDIT: Timeline point 1 -->
+        <div style="text-align: center; flex: 1;">
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; color: #C4956A; display: block; margin-bottom: 6px;">1520</span>
+          <span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.08em; text-transform: uppercase;">Ming Dynasty</span>
+          <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.5); margin: 8px 0 0 0; line-height: 1.5;">Yuan Jiaji founds Yuan Tai Tang in Zhouzhuang</p>
+        </div>
+
+        <!-- EDIT: Timeline point 2 -->
+        <div style="text-align: center; flex: 1;">
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; color: #C4956A; display: block; margin-bottom: 6px;">1735</span>
+          <span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.08em; text-transform: uppercase;">Qing Dynasty</span>
+          <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.5); margin: 8px 0 0 0; line-height: 1.5;">Emperor Qianlong's recognition elevates reputation</p>
+        </div>
+
+        <!-- EDIT: Timeline point 3 -->
+        <div style="text-align: center; flex: 1;">
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; color: #C4956A; display: block; margin-bottom: 6px;">2020s</span>
+          <span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.08em; text-transform: uppercase;">Modern Singapore</span>
+          <p style="font-family: 'Figtree', Arial, sans-serif; font-size: 13px; color: rgba(250,247,242,0.5); margin: 8px 0 0 0; line-height: 1.5;">Yuan Jinsheng brings the lineage to Orchard Road</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EDIT: MOH registered badge -->
+    <div style="text-align: center; margin-top: 40px;">
+      <span style="font-family: 'Figtree', Arial, sans-serif; font-size: 12px; color: rgba(250,247,242,0.3); letter-spacing: 0.1em; text-transform: uppercase;">MOH Registered Healthcare Clinic · Singapore</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== 10-trial.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 10-trial — Dramatic dark trial offer
+  NOTE: Includes gradient transition from gallery above
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .trial-09-price { font-size: 64px !important; }
+    .trial-09-heading { font-size: 32px !important; }
+    .trial-09-includes { flex-direction: column !important; align-items: flex-start !important; }
+  }
+</style>
+
+<!-- Gallery-to-Trial gradient transition -->
+<div style="height: 100px; background: linear-gradient(to bottom, #FAF7F2, #2C2420);"></div>
+
+<!-- EDIT: Trial offer section -->
+<section style="position: relative; overflow: hidden; padding: 140px 24px;">
+  <!-- EDIT: Trial section background photo — replace with treatment room image -->
+  <img src="https://placehold.co/1440x800/2C2420/C4956A?text=Treatment+Room+Ambiance" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+  <div style="position: absolute; inset: 0; background: rgba(44,36,32,0.88); z-index: 1;"></div>
+  <div style="position: relative; z-index: 2; max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
+    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase;">First-Time Visitors</span>
+    <!-- EDIT: Trial price -->
+    <span class="trial-09-price" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 100px; color: #C4956A; letter-spacing: -0.03em; line-height: 1;">$89</span>
+    <span style="font-family: 'Figtree', sans-serif; font-size: 16px; color: #8A7E74;"><span style="text-decoration: line-through;">$224</span> usual price</span>
+    <div style="width: 28px; height: 1px; background-color: #C4956A; margin: 4px 0;"></div>
+    <!-- EDIT: Trial treatment name -->
+    <h3 class="trial-09-heading" style="font-family: 'DM Serif Display', Georgia, serif; font-size: 40px; font-weight: 400; color: #FAF7F2; margin: 0; line-height: 1.2;">Himalaya Massage +<br>Moxibustion Combo</h3>
+    <p style="font-family: 'Noto Serif SC', serif; font-size: 15px; color: rgba(196,149,106,0.7); margin: 0;">喜马拉雅按摩 + 艾灸 · 含全身状况评估</p>
+    <!-- What's included -->
+    <div class="trial-09-includes" style="display: flex; gap: 32px; margin: 16px 0 8px; justify-content: center; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #C4956A; font-size: 16px;">&#10003;</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Himalaya salt massage (60 min)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #C4956A; font-size: 16px;">&#10003;</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Moxibustion treatment</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #C4956A; font-size: 16px;">&#10003;</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(250,247,242,0.7);">Full body assessment</span>
+      </div>
+    </div>
+    <p style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.5); margin: 0;">Your therapist explains the assessment. You decide what's next. Insurance-claimable.</p>
+    <!-- EDIT: Trial CTA link -->
+    <a href="https://wa.me/6590897778?text=Hi%2C%20I%27d%20like%20the%20%2489%20trial" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 20px 56px; background-color: #C4956A; border-radius: 4px; text-decoration: none; margin-top: 8px; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 4px 24px rgba(196,149,106,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+      <span style="font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 600; color: #ffffff; letter-spacing: 0.1em; text-transform: uppercase;">Claim Your Trial — $89</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ===== 11-testimonials.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 11-testimonials — Auto-scrolling marquee testimonials
+  NOTE: Marquee CSS animation included. Cards are duplicated for seamless loop.
+-->
+
+<style>
+  @keyframes marquee-10-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-10-track { animation: marquee-10-scroll 50s linear infinite; }
+  .marquee-10-track:hover { animation-play-state: paused; }
+  @media (max-width: 768px) {
+    .marquee-10-card { min-width: 280px !important; }
+  }
+</style>
+
+<!-- EDIT: Testimonials section -->
+<section style="background-color: #FAF7F2; padding: 120px 0; overflow: hidden;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; text-align: center; margin-bottom: 56px;">
+    <span style="font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: #C4956A; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 12px;">Patient Stories</span>
+    <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; margin: 0;">What Our Guests Say</h2>
+  </div>
+  <div style="width: 100%;">
+    <div class="marquee-10-track" style="display: flex; gap: 24px; width: fit-content;">
+
+      <!-- === 6 testimonial cards (original set) === -->
+
+      <!-- Testimonial 1: Rachel — Back pain -->
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Three years of chronic lower back pain from desk work. After six sessions combining acupuncture and physio, I can sit through a full workday without discomfort."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Rachel Tan</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Tanjong Pagar</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 2: Wei Jie — Cold limbs -->
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Chronically cold hands and feet, even in Singapore. After a warming protocol with moxibustion, my hands are warm again. Haven't worn socks to bed since."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Wei Jie</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Bukit Timah</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 3: Shu Min — No hard sell -->
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Went for the $89 trial expecting the usual hard sell. Instead, the therapist spent 20 minutes explaining my condition. Zero pressure. I signed up for a follow-up on my own terms."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Shu Min</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Clementi</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 4: Jun Wei — Sports injury -->
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Shoulder injury from overhead press. Couldn't raise my arm for two months. Four physio sessions here and full range of motion came back. My physio understood gym movements."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Jun Wei</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Personal Trainer, Tiong Bahru</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 5: Sarah — Stress/sleep -->
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"High-stress job, hadn't slept through the night in months. After my first tuina and moxibustion session, I slept seven hours straight. I come bi-weekly now."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Sarah Lim</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 6: David — Elderly parent -->
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Brought my 72-year-old mother for chronic knee pain. After eight sessions, she walks without limping. She looks forward to her appointments. That says everything."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">David Chen</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Ang Mo Kio</span>
+        </div>
+      </div>
+
+      <!-- === Duplicated set for seamless loop === -->
+
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Three years of chronic lower back pain from desk work. After six sessions combining acupuncture and physio, I can sit through a full workday without discomfort."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Rachel Tan</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Tanjong Pagar</span>
+        </div>
+      </div>
+
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Chronically cold hands and feet, even in Singapore. After a warming protocol with moxibustion, my hands are warm again. Haven't worn socks to bed since."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Wei Jie</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Bukit Timah</span>
+        </div>
+      </div>
+
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Went for the $89 trial expecting the usual hard sell. Instead, the therapist spent 20 minutes explaining my condition. Zero pressure. I signed up for a follow-up on my own terms."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Shu Min</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Clementi</span>
+        </div>
+      </div>
+
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Shoulder injury from overhead press. Couldn't raise my arm for two months. Four physio sessions here and full range of motion came back. My physio understood gym movements."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Jun Wei</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Personal Trainer, Tiong Bahru</span>
+        </div>
+      </div>
+
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"High-stress job, hadn't slept through the night in months. After my first tuina and moxibustion session, I slept seven hours straight. I come bi-weekly now."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">Sarah Lim</span>
+        </div>
+      </div>
+
+      <div class="marquee-10-card" style="min-width: 380px; max-width: 380px; padding: 36px 32px; background-color: #ffffff; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(44,36,32,0.05);">
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #2C2420; line-height: 1.7; font-style: italic; margin: 0;">"Brought my 72-year-old mother for chronic knee pain. After eight sessions, she walks without limping. She looks forward to her appointments. That says everything."</p>
+        <div style="width: 20px; height: 1px; background-color: #C4956A;"></div>
+        <div>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #2C2420;">David Chen</span>
+          <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: #8A7E74;"> · Ang Mo Kio</span>
+        </div>
+      </div>
+
+    </div><!-- /track -->
+  </div>
+</section>
+
+<!-- ===== 12-contact.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 12-contact — Visit us with WhatsApp and call CTAs
+-->
+
+<style>
+  @media (max-width: 768px) {
+    .contact-11-info { flex-direction: column !important; gap: 24px !important; }
+    .contact-11-buttons { flex-direction: column !important; gap: 12px !important; }
+    .contact-11-buttons a { width: 100% !important; justify-content: center !important; }
+  }
+</style>
+
+<!-- EDIT: Contact section -->
+<section id="contact" style="background-color: #FAF7F2; padding: 120px 24px;">
+  <div style="max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+    <span style="font-family: 'Noto Serif SC', serif; font-size: 36px; color: rgba(196,149,106,0.15);">養生</span>
+    <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 56px; font-weight: 400; color: #8A7E74; margin: 0; line-height: 1.15;">Visit Us</h2>
+    <!-- EDIT: Contact section description -->
+    <p style="font-family: 'Figtree', sans-serif; font-size: 18px; color: #6B5F56; line-height: 1.65; margin: 0;">Walk in or book your first trial at $89.</p>
+    <div style="width: 28px; height: 1px; background-color: #C4956A;"></div>
+    <!-- EDIT: CTA buttons -->
+    <div class="contact-11-buttons" style="display: flex; gap: 16px; margin-top: 4px;">
+      <a href="https://wa.me/6590897778" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; padding: 16px 44px; background-color: #4A7C6F; border-radius: 4px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 4px 16px rgba(74,124,111,0.25)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 600; color: #fff; letter-spacing: 0.1em; text-transform: uppercase;">WhatsApp Us</span>
+      </a>
+      <a href="tel:+6590897778" style="display: inline-flex; align-items: center; justify-content: center; padding: 16px 44px; border: 1px solid #8A7E74; border-radius: 4px; text-decoration: none; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(44,36,32,0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: #6B5F56; letter-spacing: 0.1em; text-transform: uppercase;">Call +65 9089 7778</span>
+      </a>
+    </div>
+    <!-- EDIT: Clinic info -->
+    <div class="contact-11-info" style="display: flex; gap: 56px; margin-top: 24px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #C4956A; letter-spacing: 0.12em; text-transform: uppercase;">Open Daily</span>
+        <!-- EDIT: Operating hours -->
+        <span style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74;">10:00 AM – 3:00 AM</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #C4956A; letter-spacing: 0.12em; text-transform: uppercase;">Location</span>
+        <!-- EDIT: Address -->
+        <span style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74; text-align: center;">400 Orchard Rd, Orchard Tower<br>#03-04 – #03-45, S238875</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 600; color: #C4956A; letter-spacing: 0.12em; text-transform: uppercase;">Registered</span>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 15px; color: #8A7E74;">MOH Healthcare Clinic</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 13-footer.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 13-footer — Dark footer with QR codes and social icons
+-->
+
+<style>
+  .footer-12-link:hover { color: #C4956A !important; }
+  @media (max-width: 768px) {
+    .footer-12-inner { flex-direction: column !important; gap: 24px !important; text-align: center !important; }
+    .footer-12-links { justify-content: center !important; flex-wrap: wrap !important; }
+    .footer-12-bottom { flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+  }
+</style>
+
+<!-- EDIT: Footer -->
+<footer style="background-color: #1E1B18;">
+  <!-- Row 1: Logo + Nav -->
+  <div class="footer-12-inner" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 600; color: #C4956A;">元泰堂</span>
+      <span style="font-family: 'Figtree', sans-serif; font-size: 12px; color: #8A7E74; letter-spacing: 0.12em; text-transform: uppercase;">Harmony Wellness</span>
+    </div>
+    <div class="footer-12-links" style="display: flex; gap: 32px;">
+      <a href="#treatments" class="footer-12-link" style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.4); text-decoration: none; transition: color 0.2s ease;">Treatments</a>
+      <a href="#philosophy" class="footer-12-link" style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.4); text-decoration: none; transition: color 0.2s ease;">Our Approach</a>
+      <a href="#contact" class="footer-12-link" style="font-family: 'Figtree', sans-serif; font-size: 15px; color: rgba(250,247,242,0.4); text-decoration: none; transition: color 0.2s ease;">Contact</a>
+    </div>
+  </div>
+
+  <!-- Row 2: QR Codes -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 40px;">
+    <div style="border-top: 1px solid rgba(138,126,116,0.1); padding-top: 40px; display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;">
+      <!-- WeChat QR -->
+      <a href="wechat-qr.png" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
+        <img src="wechat-qr.png" alt="WeChat QR Code" style="width: 140px; height: 140px; border-radius: 8px; background-color: #fff; padding: 4px; object-fit: contain;">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.5);">WeChat</span>
+      </a>
+      <!-- WhatsApp QR -->
+      <a href="https://wa.me/6590897778" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
+        <img src="whatsapp-qr.png" alt="WhatsApp QR Code" style="width: 140px; height: 140px; border-radius: 8px; background-color: #fff; padding: 4px; object-fit: contain;">
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.5);">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Row 3: Social Icons -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 40px;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap;">
+      <!-- EDIT: Google Reviews link -->
+      <a href="https://www.google.com/search?sca_esv=5d54dc3c8da3388a&sxsrf=ANbL-n533OdKgtz2bLkaPXYXyjIdwI81iw:1772246848434&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTj8adc_WdympK0xl2HVx8SRpEhGmTKGz1GE1acavnzjoy_0bmh05ZZ-weirhRvj9W-QkcNT468AGzjg2gBUtfC7cJqQyX5d4iAXzN_fK8_3rHrDPHBJfppVmZr2Wz5EZfzz0rceFPF3PDs4EJgjeU2d3_JO&q=Harmony+Wellness+-+TCM+%26+Physio+%E5%85%83%E6%B3%B0%E5%A0%82%E5%85%BB%E7%94%9F%E4%B8%AD%E5%BF%83+Reviews&sa=X&ved=2ahUKEwiMvev-lfuSAxXT8qACHSjdC28Q0bkNegQIYBAF&biw=1440&bih=778&dpr=2" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"></path><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"></path><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path></svg>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">Google Reviews</span>
+      </a>
+      <!-- EDIT: Facebook link -->
+      <a href="https://www.facebook.com/profile.php?id=61583810402695" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">Facebook</span>
+      </a>
+      <!-- EDIT: Instagram link -->
+      <a href="https://www.instagram.com/harmony_wellness67/" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+        <svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#FD5;"></stop><stop offset="25%" style="stop-color:#FF543E;"></stop><stop offset="50%" style="stop-color:#C837AB;"></stop><stop offset="100%" style="stop-color:#5B51D8;"></stop></linearGradient></defs><path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">Instagram</span>
+      </a>
+      <!-- EDIT: TikTok link -->
+      <a href="https://www.tiktok.com/@harmony_wellness_tcm" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#25F4EE" d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0115.54 0h-3.09v16.36a2.72 2.72 0 01-2.72 2.27 2.72 2.72 0 01-2.72-2.72 2.72 2.72 0 012.72-2.72c.29 0 .57.05.83.13V10.2a5.81 5.81 0 00-.83-.06 5.82 5.82 0 105.82 5.82V9.68A7.37 7.37 0 0019.73 11V7.91a4.28 4.28 0 01-3.13-2.09z"></path><path fill="#FE2C55" d="M17.6 6.82s.51.5 0 0A4.28 4.28 0 0116.54 1h-3.09v16.36a2.72 2.72 0 01-2.72 2.27 2.72 2.72 0 01-2.72-2.72 2.72 2.72 0 012.72-2.72c.29 0 .57.05.83.13V11.2a5.81 5.81 0 00-.83-.06A5.82 5.82 0 0016.55 17V10.68A7.37 7.37 0 0020.73 12V8.91a4.28 4.28 0 01-3.13-2.09z"></path></svg>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">TikTok</span>
+      </a>
+      <!-- EDIT: Xiaohongshu link -->
+      <a href="https://www.xiaohongshu.com/user/profile/683b00d7000000001d00a9a9" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 18px; border-radius: 8px; background-color: rgba(255,255,255,0.05); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF2442"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.2 16.4c-.3.5-.8.8-1.4.8H8.2c-.6 0-1.1-.3-1.4-.8-.3-.5-.3-1.1 0-1.6l3.8-6.6c.3-.5.8-.8 1.4-.8s1.1.3 1.4.8l3.8 6.6c.3.5.3 1.1 0 1.6z"></path></svg>
+        <span style="font-family: 'Figtree', sans-serif; font-size: 14px; font-weight: 500; color: rgba(250,247,242,0.6);">小红书</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Row 4: Bottom bar -->
+  <div class="footer-12-bottom" style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; border-top: 1px solid rgba(138,126,116,0.1); display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(250,247,242,0.25);">&copy; 2026 Harmony Wellness Pte Ltd · 元泰堂养生中心</span>
+    <a href="#" style="font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(250,247,242,0.25); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(250,247,242,0.5)'" onmouseout="this.style.color='rgba(250,247,242,0.25)'">Privacy Policy</a>
+  </div>
+</footer>
+
+
+<!-- ===== 14-whatsapp-fab.html ===== -->
+<!--
+  COLORS:
+  Background: #FAF7F2  |  Surface: #F4EFE8
+  Sand: #EDE8E0        |  Text: #2C2420
+  Muted: #8A7E74       |  Body: #6B5F56
+  Jade: #4A7C6F        |  Gold: #C4956A
+  Dark: #1E1B18
+
+  SECTION: 14-whatsapp-fab — Fixed-position floating WhatsApp button
+  NOTE: This is a fixed-position element. Appears in bottom-right corner on all screen sizes.
+-->
+
+<!-- EDIT: WhatsApp floating action button -->
+<a href="https://wa.me/6590897778" target="_blank" style="position: fixed; bottom: 24px; right: 24px; z-index: 100; width: 56px; height: 56px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.3); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
 
 </body>
 </html>
